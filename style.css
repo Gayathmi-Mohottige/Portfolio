@@ -254,7 +254,7 @@ section {
     white-space: nowrap;
     animation: 
         typing 3s steps(25, end) 1 forwards, 
-        blink 0.75s step-end 4 forwards; /* Added forwards to blink */
+        blink 0.75s step-end 4 forwards; 
     width: 0;
     font-size: 6rem;
     font-weight: 700;
@@ -262,7 +262,7 @@ section {
     display: inline-block;
 }
 
-/* Remove the ::after pseudo-element and hide-cursor keyframes */
+
 @keyframes typing {
     from { width: 0 }
     to { width: 100% }
@@ -270,7 +270,7 @@ section {
 
 @keyframes blink {
     50% { border-color: transparent; }
-    100% { border-color: transparent; } /* Ends with transparent border */
+    100% { border-color: transparent; } 
 }
 
 .about {
@@ -299,7 +299,7 @@ section {
     z-index: 1;
   }
   
-  /* Outer ring - yellow, spinning clockwise */
+  /* Outer ring */
   .outer-ring {
     width: 100%;
     height: 100%;
@@ -307,13 +307,13 @@ section {
     animation: spinClockwise 6s linear infinite;
   }
   
-  /* Inner ring - blue, spinning counter-clockwise */
+  /* Inner ring */
   .inner-ring {
     width: 90%;  
     height: 90%;
     border-radius: 50%;
   border: 3px solid transparent;
-  border-bottom: 3px solid #00eeff92; /* Draw just one side of the circle */
+  border-bottom: 3px solid #00eeff92; 
   transform: rotate(-45deg); 
   animation: spinCounterClockwise 6s linear infinite;
   z-index: 1;
@@ -336,7 +336,7 @@ section {
     display: block;
   }
   
-  /* Animations */
+  
   @keyframes spinClockwise {
     0% {
       transform: rotate(0deg);
@@ -438,7 +438,7 @@ section {
 
 .skill-item {
     background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(8px); /* Matches about-container */
+    backdrop-filter: blur(8px); 
     border-radius: 2.5rem;
     padding: 2.5rem;
     border: 1px solid rgba(255, 255, 255, 0.06);
@@ -519,18 +519,18 @@ section {
     margin-bottom: 1rem;
     color: var(--text-color);
 }
-/* Modern Progress Bar */
+
 .skill-bar {
     width: 100%;
     height: 8px;
-    background: rgba(255, 255, 255, 0.05); /* More transparent */
+    background: rgba(255, 255, 255, 0.05); 
     border-radius: 50px;
     position: relative;
     overflow: hidden;
     margin-top: 1rem;
     margin-bottom: 1.6rem;
-    backdrop-filter: blur(6px); /* Frosted blur */
-    box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.1); /* Soft inner glow */
+    backdrop-filter: blur(6px); 
+    box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.1); 
 }
 
 .bar-fill {
@@ -544,7 +544,7 @@ section {
 
 
 .bar-fill::after {
-    display: none; /* Optional: remove the glowing ball at the end */
+    display: none; 
 }
 
 /* Percentage Text */
@@ -553,7 +553,7 @@ section {
     color: #ffffff87;
     font-weight: 600;
     margin-top:1rem;
-    text-align: center; /* Move below bar */
+    text-align: center; 
 }
 .reveal.revealed {
     opacity: 1;
@@ -641,7 +641,7 @@ section {
     box-shadow: 0 0 10px #00cfdc;
 }
 
-/* Place dot relative to the center line */
+
 .timeline-item.left .timeline-dot,
 .timeline-item.right .timeline-dot {
     top: 50%;
@@ -953,7 +953,7 @@ section {
       gap: 2rem;
     }
   
-    /* TIMELINE FIXES */
+    
     .timeline::before {
       left: 20px;
     }
