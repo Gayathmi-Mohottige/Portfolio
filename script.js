@@ -8,7 +8,7 @@ const canvas = document.getElementById("stars-canvas");
 
     const backgroundStarCount = 400;
     const interactiveStarCount = 150;
-    const dimInteractiveStarCount = 1000; // 💥 more dim interactive stars!
+    const dimInteractiveStarCount = 1000;
 
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -64,7 +64,7 @@ const canvas = document.getElementById("stars-canvas");
     let mouse = {
         x: null,
         y: null,
-        radius: 150 // increased radius
+        radius: 150 
     };
 
     window.addEventListener("mousemove", function(e) {
@@ -122,7 +122,7 @@ const canvas = document.getElementById("stars-canvas");
                 const directionX = dx / distance;
                 const directionY = dy / distance;
 
-                star.x -= directionX * force * 2; // increased force
+                star.x -= directionX * force * 2; 
                 star.y -= directionY * force * 2;
             } else {
                 const dx = star.baseX - star.x;
@@ -163,8 +163,7 @@ const canvas = document.getElementById("stars-canvas");
             ctx.fill();
         }
 
-        // --- Realistic Shooting Stars 🌠
-       // --- Realistic curved shooting stars 🌠🌙
+
     for (let i = shootingStars.length - 1; i >= 0; i--) {
         let s = shootingStars[i];
 
@@ -289,6 +288,22 @@ document.addEventListener("DOMContentLoaded", () => {
     navbar.classList.toggle("slide-in");
   });
 });
+
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+  if (loader) {
+    setTimeout(() => {
+      loader.style.transition = "opacity 1.2s ease";
+      loader.style.opacity = 0;
+      loader.style.pointerEvents = "none";
+      setTimeout(() => loader.remove(), 1200);
+    }, 3000);
+  }
+});
+
+
+
+
 
 
     
