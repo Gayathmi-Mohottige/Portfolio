@@ -289,17 +289,40 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+function stars() {
+  let count = 50;
+  let scene = document.querySelector('.scene');
+  let i = 0;
+  while (i < count) {
+    let star = document.createElement('i');
+    let x = Math.floor(Math.random() * window.innerWidth);
+    let duration = Math.random() * 1;
+    let h = Math.random() * 100;
+
+    star.style.left = x + 'px';
+    star.style.width = 1 + 'px';
+    star.style.height = 50 + h + 'px';
+    star.style.animationDuration = duration + 's';
+
+    scene.appendChild(star);
+    i++;
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  stars();
+});
+
 window.addEventListener("load", () => {
   const loader = document.getElementById("loader");
-  if (loader) {
-    setTimeout(() => {
-      loader.style.transition = "opacity 1.2s ease";
-      loader.style.opacity = 0;
-      loader.style.pointerEvents = "none";
-      setTimeout(() => loader.remove(), 1200);
-    }, 3000);
-  }
+  setTimeout(() => {
+    loader.style.transition = "opacity 1.5s ease";
+    loader.style.opacity = 0;
+    loader.style.pointerEvents = "none";
+    setTimeout(() => loader.remove(), 1600);
+  }, 3200); // wait for rocket launch animation
 });
+
 
 
 
