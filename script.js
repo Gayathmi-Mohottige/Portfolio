@@ -309,6 +309,10 @@ function stars() {
   }
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  stars();
+});
+
 window.addEventListener("load", () => {
   const loader = document.getElementById("loader");
   setTimeout(() => {
@@ -323,7 +327,6 @@ window.addEventListener("load", () => {
     }, 1600); // After fade out
   }, 3200); // After rocket launch
 });
-
 
 
 
