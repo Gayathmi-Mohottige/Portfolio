@@ -275,6 +275,14 @@ section {
     margin-bottom: 4rem;
 }
 
+.home-content p {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  color: var(--subtext-color);
+  margin-bottom: 4rem;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.4), 0 0 12px rgba(0, 0, 0, 0.2);
+}
+
 /* ========== SOCIAL ICONS ========== */
 .social-icons {
     display: flex;
@@ -365,17 +373,20 @@ section {
 }
 
 .typewriter {
-    overflow: hidden;
-    border-right: 3px solid var(--accent-color);
-    white-space: nowrap;
-    animation: 
-        typing 3s steps(25, end) 1 forwards, 
-        blink 0.75s step-end 4 forwards; 
-    width: 0;
-    font-size: 6rem;
-    font-weight: 700;
-    color: var(--text-color);
-    display: inline-block;
+  width: 0;
+  overflow: hidden;
+  border-right: 3px solid var(--accent-color);
+  white-space: nowrap;
+  font-size: 6rem;
+  font-weight: 700;
+  color: var(--text-color);
+  display: inline-block;
+}
+
+.typewriter.start-type {
+  animation:
+    typing 3s steps(25, end) 1 forwards,
+    blink 0.75s step-end 4 forwards;
 }
 
 

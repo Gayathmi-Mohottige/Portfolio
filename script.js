@@ -309,19 +309,21 @@ function stars() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  stars();
-});
-
 window.addEventListener("load", () => {
   const loader = document.getElementById("loader");
   setTimeout(() => {
     loader.style.transition = "opacity 1.5s ease";
     loader.style.opacity = 0;
     loader.style.pointerEvents = "none";
-    setTimeout(() => loader.remove(), 1600);
-  }, 3200); // wait for rocket launch animation
+
+    // Start typewriter AFTER loader is hidden
+    setTimeout(() => {
+      loader.remove();
+      document.querySelector(".typewriter").classList.add("start-type");
+    }, 1600); // After fade out
+  }, 3200); // After rocket launch
 });
+
 
 
 
