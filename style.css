@@ -968,7 +968,7 @@ section {
 .cert-card a {
   display: inline-block;
   font-size: 1.3rem;
-  color: var(--accent-color);
+  color: #a6e8ffb2;
   font-weight: 600;
   transition: color 0.3s ease;
 }
