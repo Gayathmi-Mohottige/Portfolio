@@ -899,6 +899,85 @@ section {
     background-color: #02c5d3a5;
     color: black;
   }
+.certifications {
+  min-height: 100vh;
+  padding: 6rem 5vw;
+  padding-top: 15rem;
+  padding-bottom: 8rem;
+  text-align: center;
+}
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* wider cards */
+  gap: 3.5rem;
+  margin-top: 5rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cert-card {
+  background: rgba(0, 70, 110, 0.08); /* subtle blue undertone */
+  backdrop-filter: blur(10px);
+  padding: 3rem;
+  border-radius: 2rem;
+  border: 1px solid rgba(0, 224, 255, 0.2); /* blue border */
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.2),
+    0 0 30px rgba(0, 224, 255, 0.05); /* soft blue glow */
+  transition: all 0.3s ease;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.cert-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 
+    0 12px 30px rgba(0, 224, 255, 0.3),
+    0 0 40px rgba(0, 224, 255, 0.1),
+    inset 0 0 8px rgba(0, 224, 255, 0.05);
+  background-color: rgba(0, 100, 160, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+
+.cert-card.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cert-card h3 {
+  font-size: 2rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.cert-card .issuer {
+  font-size: 1.4rem;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.cert-card .skill {
+  font-size: 1.3rem;
+  color: var(--subtext-color);
+  margin-bottom: 1rem;
+}
+
+.cert-card a {
+  display: inline-block;
+  font-size: 1.3rem;
+  color: var(--accent-color);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.cert-card a:hover {
+  color: var(--accent-hover);
+}
+
+
   
   .contact {
     min-height: 100vh;
@@ -1137,5 +1216,9 @@ section {
     .contact-form {
       margin: 0 auto;
     }
+    
+    .cert-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
   }
   

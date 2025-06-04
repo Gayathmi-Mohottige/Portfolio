@@ -289,6 +289,25 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+const certCards = document.querySelectorAll(".cert-card");
+
+const certObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("revealed");
+        certObserver.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.2,
+  }
+);
+
+certCards.forEach((card) => certObserver.observe(card));
+
+
 function stars() {
   let count = 50;
   let scene = document.querySelector('.scene');
