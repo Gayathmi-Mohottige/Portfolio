@@ -642,8 +642,20 @@
     if(!isTouch){ cDot.style.transform='translate('+(x-3)+'px,'+(y-3)+'px)'; }
   }
   addEventListener('pointermove',onMove,{passive:true});
-  addEventListener('pointerdown',e=>{ dragging=true; moved=0; lastX=e.clientX; lastY=e.clientY; });
-  addEventListener('pointerup',e=>{ dragging=false; if(moved<6) handleClick(); });
+addEventListener('pointerdown', e => { 
+  dragging = true; 
+  moved = 0; 
+  lastX = e.clientX; 
+  lastY = e.clientY; 
+  
+  // FIX: Instantly update normalized device coordinates (ndc) on tap 
+  // so the raycaster knows exactly where your finger just landed.
+  ndc.x = (e.clientX / innerWidth) * 2 - 1;
+  ndc.y = -(e.clientY / innerHeight) * 2 + 1;
+  
+  // Force an immediate calculation so 'hovered' is ready before pointerup fires
+  if(isTouch) updateHover();
+});  addEventListener('pointerup',e=>{ dragging=false; if(moved<6) handleClick(); });
 
   // cursor ring trail
   function cursorLoop(){ rx=lerp(rx,mx,.18); ry=lerp(ry,my,.18);
